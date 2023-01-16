@@ -9,6 +9,7 @@ const AppContextProvider = ({ children }) => {
   const supabase = createClient(supabaseUrl, supabaseKey);
 
   let mySubscription = null;
+  console.log(mySubscription)
   const [username, setUsername] = useState("");
   const [messages, setMessages] = useState([]);
   const [error, setError] = useState("");
@@ -100,6 +101,7 @@ const AppContextProvider = ({ children }) => {
         .order("id", { ascending: false });
       // console.log(`data`, data);
       setLoadingInitial(false);
+      console.log('error', error)
       if (error) {
         setError(error.message);
         supabase.removeSubscription(mySubscription);
