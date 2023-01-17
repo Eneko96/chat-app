@@ -175,7 +175,7 @@ const AppContextProvider = ({ children }) => {
         scrollToBottom,
         isOnBottom,
         country: countryCode,
-        unviewedMessageCount,
+        unviewedMessageCount
       }}
     >
       {children}
